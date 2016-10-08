@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="cityLabelString">City (i.e. Charlotte)</string>
+    <string name="stateLabelString">State (i.e. NC)</string>
+    <string name="hourlyDataString">Hourly Data</string>
+    <string name="locationStr">Current Location:</string>
+    <string name="maxTempString">Max Temperature:</string>
+    <string name="minTempString">Min Temperature:</string>
+    <string name="feelslikeString_Details">Feels Like:</string>
+    <string name="humidityString">Humidity:</string>
+    <string name="pressureString">Pressure:</string>
+    <string name="cloudsString">Clouds:</string>
+    <string name="windsString">Winds:</string>
+</resources>
