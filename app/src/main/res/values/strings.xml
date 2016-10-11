@@ -11,4 +11,5 @@
     <string name="pressureString">Pressure:</string>
     <string name="cloudsString">Clouds:</string>
     <string name="windsString">Winds:</string>
+    <string name="favLabel">Favourites</string>
 </resources>

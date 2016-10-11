@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView noFavListLabel;
     ListView favListView;
+    TextView favTextViewLabel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +41,11 @@ public class MainActivity extends AppCompatActivity {
         favListView = (ListView)findViewById(R.id.favListView);
 
         noFavListLabel = (TextView)findViewById(R.id.noFavLabelTextView);
+
+        favTextViewLabel = (TextView)findViewById(R.id.favTextViewLabel);
         noFavListLabel.setVisibility(View.INVISIBLE);
         favListView.setVisibility(View.INVISIBLE);
+        favTextViewLabel.setVisibility(View.INVISIBLE);
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +55,10 @@ public class MainActivity extends AppCompatActivity {
                 {
                     Toast.makeText(getApplicationContext(),"Please Enter All The Details",Toast.LENGTH_SHORT).show();
                 }
+//                else if(!(stateEditText.getText().toString().matches("[a-zA-Z]")) && !(stateEditText.getText().toString().matches("[a-zA-Z]"))){
+//
+//                    Toast.makeText(getApplicationContext(),"Please Enter Valid Details",Toast.LENGTH_SHORT).show();
+//                }
                 else
                 {
                     String city = cityEditText.getText().toString();
@@ -91,11 +99,13 @@ public class MainActivity extends AppCompatActivity {
             {
                 noFavListLabel.setVisibility(View.VISIBLE);
                 favListView.setVisibility(View.INVISIBLE);
+                favTextViewLabel.setVisibility(View.INVISIBLE);
             }
             else
             {
                 noFavListLabel.setVisibility(View.INVISIBLE);
                 favListView.setVisibility(View.VISIBLE);
+                favTextViewLabel.setVisibility(View.VISIBLE);
 
                 FavCustomAdapter arrayAdapter = new FavCustomAdapter(this,R.layout.row_item_fav_layout,wList);
 
@@ -124,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
                             if(finalWList.size()==0)
                             {
                                 noFavListLabel.setVisibility(View.VISIBLE);
+                                favTextViewLabel.setVisibility(View.INVISIBLE);
                                 favListView.setVisibility(View.INVISIBLE);
                             }
                         }
@@ -131,6 +142,7 @@ public class MainActivity extends AppCompatActivity {
                         {
                             noFavListLabel.setVisibility(View.VISIBLE);
                             favListView.setVisibility(View.INVISIBLE);
+                            favTextViewLabel.setVisibility(View.INVISIBLE);
                         }
                         return false;
                     }
